@@ -110,7 +110,7 @@
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: lightseagreen;
             color: white;
             padding: 1rem 2.5rem;
             border: none;
@@ -141,7 +141,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #0EBAE2 0%, #00FFFF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -175,7 +175,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 1rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #0EBAE2, #00FFFF);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -391,7 +391,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="media/Logos/pnglogo.png" alt="DentSmile Logo" width="20%">
+                <img src="media/dentsmile.png" alt="DentSmile Logo" width="25%">
                 Clinica DentSmile
             </div>
             <ul class="nav-links">
@@ -433,18 +433,18 @@
                 <div class="service-icon">
                     <i data-lucide="heart"></i>
                 </div>
-                <h3>Restorative Care</h3>
-                <p>Fillings, crowns, bridges, and implants to restore function and beauty to your smile.</p>
+                <h3>Reemplazos Dentales</h3>
+                <p>Rellenos, Coronas, Puentes, E implantes para restaurar la funcion y belleza a tu sonrisa.</p>
             </div>
         </div>
     </section>
 
     <section id="appointment">
         <div class="appointment-section">
-            <h2 class="section-title">Book Your Appointment</h2>
+            <h2 class="section-title">Agenda una cita</h2>
             <div class="appointment-form">
                 <div class="calendar-container">
-                    <h3 style="margin-bottom: 1rem; text-align: center;">Select a Date</h3>
+                    <h3 style="margin-bottom: 1rem; text-align: center;">Elige la fecha</h3>
                     <div class="calendar">
                         <div class="calendar-header">Sun</div>
                         <div class="calendar-header">Mon</div>
@@ -494,15 +494,15 @@
                 <div>
                     <form id="appointmentForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
+                            <label for="name">Nombre y apellido</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Correo</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone">Numero de telefono</label>
                             <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
@@ -540,18 +540,26 @@
     </section>
 
     <section id="location">
-        <h2 class="section-title">Find Us</h2>
+        <h2 class="section-title">Visitanos</h2>
         <div class="map-container">
-            <div class="map-placeholder">
+
                 <div>
-                    <i data-lucide="map-pin" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
-                    <h3>Interactive Map Coming Soon</h3>
-                    <p>123 Dental Street, Downtown<br>City, State 12345</p>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.682486080213!2d-73.98668378459395!3d40.75895197932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1635959717891!5m2!1sen!2sus"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="yes" 
+                            loading="lazy">
+                        </iframe>
+
+                    <p>Mejicanos<br>Ahi por el gym</p>
                     <p style="margin-top: 1rem;">
-                        <strong>Hours:</strong><br>
-                        Mon-Fri: 8:00 AM - 6:00 PM<br>
-                        Sat: 9:00 AM - 3:00 PM<br>
-                        Sun: Closed
+                        <strong>Horarios:</strong><br>
+                        Lun-Vie: 8:00 AM - 4:00 PM<br>
+                        Sab: 9:00 AM - 12:00 MD<br>
+                        Dom: Cerrado
                     </p>
                 </div>
             </div>
@@ -560,25 +568,25 @@
 
     <section id="contact">
         <div class="contact-section">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title">Contactanos</h2>
             <form id="contactForm" class="contact-form">
                 <div class="form-group">
-                    <label for="contactName">Your Name</label>
+                    <label for="contactName">Nobre</label>
                     <input type="text" id="contactName" name="contactName" required>
                 </div>
                 <div class="form-group">
-                    <label for="contactEmail">Email Address</label>
+                    <label for="contactEmail">Correo Electronico</label>
                     <input type="email" id="contactEmail" name="contactEmail" required>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
+                    <label for="subject">Asunto</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message">Mensaje</label>
                     <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn">Enviar mensaje</button>
             </form>
         </div>
     </section>
@@ -586,7 +594,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Bright Smile Dental</h3>
+                <h3>Clinica DentSmile</h3>
                 <p>Your trusted partner for comprehensive dental care. We're committed to helping you achieve and maintain optimal oral health.</p>
             </div>
             <div class="footer-section">
