@@ -184,7 +184,10 @@
             justify-content: center;
             color: white;
         }
-
+        #icon{
+    width: 49.99999%;
+    margin: 6px 0            
+        }
         /* Appointment Section */
         .appointment-section {
             background: linear-gradient(135deg, #f8f9ff 0%, #e8efff 100%);
@@ -235,50 +238,25 @@
             border-radius: 20px;
             padding: 2rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 1px;
-            background: #e0e6ed;
-            border-radius: 10px;
+            height: 600px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
-        .calendar-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1rem;
+        .calendar-container h3 {
+            margin-bottom: 1rem;
             text-align: center;
-            font-weight: bold;
+            flex-shrink: 0;
         }
 
-        .calendar-day {
-            background: white;
-            padding: 1rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .calendar-day:hover {
-            background: #f0f4ff;
-        }
-
-        .calendar-day.selected {
-            background: #667eea;
-            color: white;
-        }
-
-        .calendar-day.unavailable {
-            background: #f5f5f5;
-            color: #999;
-            cursor: not-allowed;
+        .calendar-iframe {
+            width: 100%;
+            flex: 1;
+            border: none;
+            border-radius: 10px;
+            min-height: 0;
         }
 
         /* Map Section */
@@ -289,6 +267,12 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             height: 400px;
             position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Contact Form */
@@ -371,6 +355,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .calendar-container {
+                height: 500px;
+            }
+            
             section {
                 padding: 60px 1rem;
             }
@@ -407,26 +395,38 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <i data-lucide="shield-check"></i>
+                    <img src="media/vectors/wash-teeth-svgrepo-com.svg" alt="Limpieza dental" id="icon">
                 </div>
-                <h3>Cuidado Preventivo</h3>
-                <p>Checkeos de rutina, Limpiezas, y tratamoentos preventivos Para mantener tus dientitos fuertes y saludables!</p>
+                <h3>Limpieza dental</h3>
+                <hr>
+                <p>Se recomienda realizar cada 6 meses o mínimo una vez al año una limpieza profunda, realizamos tu limpieza con aparatos de ultrasonido el cual retira el sarro dental y manchas extrinsecas por medio de vibraciones, sin producir ningún tipo de dolor, finalizando con pulido dental y aplicación de flúor gel para mantener tu salud oral.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i data-lucide="zap"></i>
+                    <img src="media/vectors/teeth-svgrepo-com.svg" alt="Diente carioso" id="icon">
                 </div>
-                <h3>Cuidados Cosmeticos</h3>
-                <p>Transforma tu sonrisa con blanqueamientos y otros procesos cosmeticos.</p>
+                <h3>Sellantes de Fosas y Fisuras</h3>
+                <hr>
+                <p>Es un tratamiento preventivo que consiste en sellar los surcos profundos de tus dientes para no permitir que se alojen bacterias y evitar que inicien el proceso de lesiones cariosas.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i data-lucide="heart"></i>
+                    <img src="media/vectors/tooth-rotate-svgrepo-com.svg" alt="Diente con fluor gel y barniz" id="icon">
                 </div>
-                <h3>Reemplazos Dentales</h3>
-                <p>Rellenos, Coronas, Puentes, E implantes para restaurar la funcion y belleza a tu sonrisa.</p>
+                <h3>Aplicación de Flúor Gel y Barniz</h3>
+                <hr>
+                <p>Es recomendable realizar cargas adecuadas de Flúor cada año y aplicarlo en sus diferentes presentaciones para remineralizar la estructura de tus dientes principalmente el esmalte para que no este susceptible a ningún daño.</p>
+            </div>
+                        <div class="service-card">
+                <div class="service-icon">
+                    <img src="media/vectors/wash-teeth-svgrepo-com.svg" alt="Limpieza dental" id="icon">
+                </div>
+                <h3>Limpieza dental</h3>
+                <hr>
+                <p>Se recomienda realizar cada 6 meses o mínimo una vez al año una limpieza profunda, realizamos tu limpieza con aparatos de ultrasonido el cual retira el sarro dental y manchas extrinsecas por medio de vibraciones, sin producir ningún tipo de dolor, finalizando con pulido dental y aplicación de flúor gel para mantener tu salud oral.</p>
             </div>
         </div>
+        
     </section>
 
     <section id="appointment">
@@ -434,52 +434,8 @@
             <h2 class="section-title">Agenda una cita</h2>
             <div class="appointment-form">
                 <div class="calendar-container">
-                    <h3 style="margin-bottom: 1rem; text-align: center;">Elige la fecha</h3>
-                    <div class="calendar">
-                        <div class="calendar-header">Sun</div>
-                        <div class="calendar-header">Mon</div>
-                        <div class="calendar-header">Tue</div>
-                        <div class="calendar-header">Wed</div>
-                        <div class="calendar-header">Thu</div>
-                        <div class="calendar-header">Fri</div>
-                        <div class="calendar-header">Sat</div>
-                        <div class="calendar-day unavailable">26</div>
-                        <div class="calendar-day unavailable">27</div>
-                        <div class="calendar-day unavailable">28</div>
-                        <div class="calendar-day unavailable">29</div>
-                        <div class="calendar-day unavailable">30</div>
-                        <div class="calendar-day unavailable">31</div>
-                        <div class="calendar-day">1</div>
-                        <div class="calendar-day">2</div>
-                        <div class="calendar-day">3</div>
-                        <div class="calendar-day">4</div>
-                        <div class="calendar-day">5</div>
-                        <div class="calendar-day">6</div>
-                        <div class="calendar-day">7</div>
-                        <div class="calendar-day">8</div>
-                        <div class="calendar-day">9</div>
-                        <div class="calendar-day">10</div>
-                        <div class="calendar-day">11</div>
-                        <div class="calendar-day">12</div>
-                        <div class="calendar-day">13</div>
-                        <div class="calendar-day">14</div>
-                        <div class="calendar-day">15</div>
-                        <div class="calendar-day">16</div>
-                        <div class="calendar-day">17</div>
-                        <div class="calendar-day">18</div>
-                        <div class="calendar-day">19</div>
-                        <div class="calendar-day">20</div>
-                        <div class="calendar-day">21</div>
-                        <div class="calendar-day">22</div>
-                        <div class="calendar-day">23</div>
-                        <div class="calendar-day">24</div>
-                        <div class="calendar-day">25</div>
-                        <div class="calendar-day">26</div>
-                        <div class="calendar-day">27</div>
-                        <div class="calendar-day">28</div>
-                        <div class="calendar-day">29</div>
-                        <div class="calendar-day">30</div>
-                    </div>
+                    <h3>Puedes encontrar las fechas disponibles aquí, la clinica esta ocupada en las fechas marcadas</h3>
+                    <iframe class="calendar-iframe" src="https://calendar.zoho.com/zc/ui/embed/#calendar=zz08011230d93e3e11f482660047e3dc499bbca01ad3e33ce35404387cb630bbe5dc49de02491e7a7e0a93641d040c96786acfd1a2&title=Test&type=1&language=es&timezone=America%2FEl_Salvador&showTitle=0&showTimezone=0&startingDayOfWeek=0&timeFormat=0&view=week&showDetail=0&theme=1&showAttendee=0&showSwitchingViews=0&expandAllday=0&eventColorType=light" title="Test" frameBorder="0" scrolling="no"></iframe>
                 </div>
                 <div>
                     <form id="appointmentForm">
@@ -532,27 +488,25 @@
     <section id="location">
         <h2 class="section-title">Visitanos</h2>
         <div class="map-container">
-
-                <div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.682486080213!2d-73.98668378459395!3d40.75895197932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1635959717891!5m2!1sen!2sus"
-                            width="100%" 
-                            height="400" 
-                            style="border:0;" 
-                            allowfullscreen="yes" 
-                            loading="lazy">
-                        </iframe>
-
-                    <p>Mejicanos<br>Ahi por el gym</p>
-                    <p style="margin-top: 1rem;">
-                        <strong>Horarios:</strong><br>
-                        Lun-Vie: 8:00 AM - 4:00 PM<br>
-                        Sab: 9:00 AM - 12:00 MD<br>
-                        Dom: Cerrado
-                    </p>
-                </div>
-            </div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d560.6503800232242!2d-89.20269001321199!3d13.73260957328036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633b25834dc463%3A0xdad03e2b05595b56!2sDentsmile!5e0!3m2!1sen!2ssv!4v1750810394703!5m2!1sen!2ssv"
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="yes" 
+                loading="lazy">
+            </iframe>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <p><strong>Dirección:</strong> 29 avenida norte reparto Duke casa 1 local 1-2<br>
+            Referencia: primera planta de edificio coach gym zacamil<br>
+            Mejicanos, El Salvador</p>
+            <p style="margin-top: 1rem;">
+                <strong>Horarios:</strong><br>
+                Lun-Vie: 8:00 AM - 4:00 PM<br>
+                Sab: 9:00 AM - 12:00 PM<br>
+                Dom: Cerrado
+            </p>
         </div>
     </section>
 
@@ -561,7 +515,7 @@
             <h2 class="section-title">Contactanos</h2>
             <form id="contactForm" class="contact-form">
                 <div class="form-group">
-                    <label for="contactName">Nobre</label>
+                    <label for="contactName">Nombre</label>
                     <input type="text" id="contactName" name="contactName" required>
                 </div>
                 <div class="form-group">
@@ -587,13 +541,10 @@
                 <h3>Clinica DentSmile</h3>
                 <p>Somos tus socios de confianza para un cuidado dental completo. Estamos comprometidos a ayudarte a alcanzar y mantener tu salud oral.</p>
             </div>
-            <div class="footer-section">
-                <h3>Vinculos</h3>
-                <p>Servicios • Citas • Seguros • Emergency Care</p>
-            </div>
+
             <div class="footer-section">
                 <h3>Contactanos</h3>
-                <p>📞 +503 2222-2222<br>📧 contacto@dentsmilesv.com<br>📍 Ahi por el gym</p>
+                <p>📞 +503 2222-2222<br>📧 contacto@dentsmilesv.com<br>📍 29 avenida norte reparto Duke casa 1 local 1-2 Referencia: primera planta de edificio coach gym zacamil</p>
             </div>
         </div>
         <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem;">
@@ -623,14 +574,8 @@
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            if (!selectedDate) {
-                alert('Please select a date from the calendar.');
-                return;
-            }
-
             const formData = new FormData(this);
             const appointmentData = {
-                date: selectedDate,
                 name: formData.get('name'),
                 email: formData.get('email'),
                 phone: formData.get('phone'),
@@ -640,11 +585,9 @@
             };
 
             // Simulate appointment booking
-            alert(`Appointment request submitted!\n\nDate: ${appointmentData.date}\nName: ${appointmentData.name}\nService: ${appointmentData.service}\nTime: ${appointmentData.time}\n\nWe'll contact you shortly to confirm your appointment.`);
+            alert(`Solicitud de cita enviada!\n\nNombre: ${appointmentData.name}\nServicio: ${appointmentData.service}\nHora: ${appointmentData.time}\n\nNos pondremos en contacto contigo pronto para confirmar tu cita.`);
             
             this.reset();
-            calendarDays.forEach(d => d.classList.remove('selected'));
-            selectedDate = null;
         });
 
         // Contact form submission
@@ -660,7 +603,7 @@
             };
 
             // Simulate message sending
-            alert(`Thank you for your message, ${contactData.name}!\n\nWe've received your inquiry about "${contactData.subject}" and will respond within 24 hours.`);
+            alert(`Gracias por tu mensaje, ${contactData.name}!\n\nHemos recibido tu consulta sobre "${contactData.subject}" y te responderemos dentro de 24 horas.`);
             
             this.reset();
         });
@@ -683,9 +626,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.background = 'black';
             }
         });
     </script>
