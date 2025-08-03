@@ -185,8 +185,8 @@
             color: white;
         }
         #icon{
-    width: 49.99999%;
-    margin: 6px 0            
+    width: 50%;
+    margin: 10px 0            
         }
         /* Appointment Section */
         .appointment-section {
@@ -328,6 +328,10 @@
             margin-bottom: 1rem;
             color: #3498db;
         }
+                #footer-icon{
+    width: 7%;
+    margin: 6px 0            
+        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -419,12 +423,46 @@
             </div>
                         <div class="service-card">
                 <div class="service-icon">
-                    <img src="media/vectors/wash-teeth-svgrepo-com.svg" alt="Limpieza dental" id="icon">
+                    <img src="media/vectors/tooth-repair-svgrepo-com.svg" alt="Limpieza dental" id="icon">
                 </div>
-                <h3>Limpieza dental</h3>
+                <h3>Obturaciones de resina dental (rellenos blancos)</h3>
                 <hr>
-                <p>Se recomienda realizar cada 6 meses o mínimo una vez al año una limpieza profunda, realizamos tu limpieza con aparatos de ultrasonido el cual retira el sarro dental y manchas extrinsecas por medio de vibraciones, sin producir ningún tipo de dolor, finalizando con pulido dental y aplicación de flúor gel para mantener tu salud oral.</p>
+                <p>Cuando la caries dental ya ha afectado tu esmalte o dentina, el tratamiento ideal es retirar todo el daño causado y obturar con materiales de calidad que recuperan tu estética y función masticatoria.</p>
+                        </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="media/vectors/teeth-svgrepo-com (5).svg" alt="Limpieza dental" id="icon">
+                </div>
+                <h3>Endodoncia</h3>
+                <hr>
+                <p>Es un tratamiento que recomendamos cuando el daño causado por caries, desgaste o fractura en tu diente ha sido tan grande que ha comprometido la cavidad donde esta el nervio dental, nos ayuda a recuperar tu diente y mantenerlo sano unos años más.</p>
+                </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="media/vectors/tooth-svgrepo-com (1).svg" alt="Limpieza dental" id="icon">
             </div>
+                <h3>Extracciones simples y complejas</h3>
+                <hr>
+                <p>Cuando ya no podemos recuperar tu diente porque el daño que han causado las bacterias con la caries es demasiado grande o has sufrido alguna fractura y es imposible rehabilitarlo recurrimos a la extracción dental procurando que el paciente no sienta ningún dolor en el procedimiento.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="media/vectors/teeth-svgrepo-com (2).svg" alt="Limpieza dental" id="icon">
+                </div>
+                <h3>Cirugía de cordales</h3>
+                <hr>
+                <p>Si tus terceras molares o “muelas del juicio”  están erupcionando, causan dolor y afectan la alineación de tus dientes, es momento de recurrir por su extracción, te ofrecemos tratamiento sin dolor y en manos de especialista en el área, en nuestro staff contamos con Cirujano Maxilofacial.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="media/vectors/tooth-teeth-svgrepo-com.svg" alt="Limpieza dental" id="icon">
+                </div>
+                <h3>Prótesis dentales</h3>
+                <hr>
+                <p>Confeccionamos todo tipo de protesis: Fijas, Removibles siendo estas tanto funcionales como estéticas, Evaluamos cada caso y te ofrecemos las mejores alternativas y materiales de calidad que se ajusten a tu presupuesto como metal Porcelana, Disilicato de Litio, Zirconio, etc.</p>
+            </div>
+        </div>
+            
         </div>
         
     </section>
@@ -433,10 +471,6 @@
         <div class="appointment-section">
             <h2 class="section-title">Agenda una cita</h2>
             <div class="appointment-form">
-                <div class="calendar-container">
-                    <h3>Puedes encontrar las fechas disponibles aquí, la clinica esta ocupada en las fechas marcadas</h3>
-                    <iframe class="calendar-iframe" src="https://calendar.zoho.com/zc/ui/embed/#calendar=zz08011230d93e3e11f482660047e3dc499bbca01ad3e33ce35404387cb630bbe5dc49de02491e7a7e0a93641d040c96786acfd1a2&title=Test&type=1&language=es&timezone=America%2FEl_Salvador&showTitle=0&showTimezone=0&startingDayOfWeek=0&timeFormat=0&view=week&showDetail=0&theme=1&showAttendee=0&showSwitchingViews=0&expandAllday=0&eventColorType=light" title="Test" frameBorder="0" scrolling="no"></iframe>
-                </div>
                 <div>
                     <form id="appointmentForm">
                         <div class="form-group">
@@ -463,21 +497,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="time">Hora</label>
-                            <select id="time" name="time" required>
-                                <option value="">Elige una hora</option>
-                                <option value="9:00">9:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="16:00">4:00 PM</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="notes">Comentarios adicionales</label>
                             <textarea id="notes" name="notes" rows="3" placeholder="Comentarios adicionales (Opcional)..."></textarea>
                         </div>
+                        <br>
                         <button type="submit" class="submit-btn">Agenda Cita</button>
                     </form>
                 </div>
@@ -510,31 +533,6 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-section">
-            <h2 class="section-title">Contactanos</h2>
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="contactName">Nombre</label>
-                    <input type="text" id="contactName" name="contactName" required>
-                </div>
-                <div class="form-group">
-                    <label for="contactEmail">Correo Electronico</label>
-                    <input type="email" id="contactEmail" name="contactEmail" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Como podemos ayudarte?" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar mensaje</button>
-            </form>
-        </div>
-    </section>
-
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -543,8 +541,14 @@
             </div>
 
             <div class="footer-section">
-                <h3>Contactanos</h3>
-                <p>📞 +503 2222-2222<br>📧 contacto@dentsmilesv.com<br>📍 29 avenida norte reparto Duke casa 1 local 1-2 Referencia: primera planta de edificio coach gym zacamil</p>
+                <h3>Visitanos</h3>
+                <p>📍 29 avenida norte reparto Duke casa 1 local 1-2 Referencia: primera planta de edificio coach gym zacamil</p>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Redes sociales</h3>
+                <p><a href="https://wa.me/+50360730809"><img src="media/socials/whatsapp-svgrepo-com.svg" alt="Whatsapp" id="footer-icon"></a>    
+                <a href="https://www.instagram.com/dentsmile.sv/"><img src="media/socials/instagram-1-svgrepo-com.svg" alt="Instagram" id="footer-icon"></a></p>
             </div>
         </div>
         <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem;">
@@ -553,62 +557,56 @@
     </footer>
 
     <script>
+         // Contact form handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            const subject = formData.get('subject');
+            const message = formData.get('notes');
+            
+            // Create mailto link with form data
+            const emailSubject = `Contact Form: ${subject}`;
+            const emailBody = `Nombre: ${name}
+Email: ${email}
+Company: ${company}
+Phone: ${phone}
+
+Message:
+${message}
+
+---
+Sent from your portfolio website contact form`;
+            
+            const mailtoLink = `mailto:contacto@dentsmile.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.style.display = 'block';
+            successDiv.innerHTML = '✅ Thank you! Your email client should open now. If not, please email me directly at rene@olivo.top';
+            
+            form.appendChild(successDiv);
+            
+            // Reset form after a delay
+            setTimeout(() => {
+                form.reset();
+                successDiv.remove();
+            }, 5000);
+        }
+
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Calendar functionality
-        let selectedDate = null;
-        const calendarDays = document.querySelectorAll('.calendar-day:not(.unavailable)');
-        
-        calendarDays.forEach(day => {
-            day.addEventListener('click', function() {
-                // Remove previous selection
-                calendarDays.forEach(d => d.classList.remove('selected'));
-                // Add selection to clicked day
-                this.classList.add('selected');
-                selectedDate = this.textContent;
-            });
-        });
-
-        // Appointment form submission
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const appointmentData = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                service: formData.get('service'),
-                time: formData.get('time'),
-                notes: formData.get('notes')
-            };
-
-            // Simulate appointment booking
-            alert(`Solicitud de cita enviada!\n\nNombre: ${appointmentData.name}\nServicio: ${appointmentData.service}\nHora: ${appointmentData.time}\n\nNos pondremos en contacto contigo pronto para confirmar tu cita.`);
-            
-            this.reset();
-        });
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const contactData = {
-                name: formData.get('contactName'),
-                email: formData.get('contactEmail'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-
-            // Simulate message sending
-            alert(`Gracias por tu mensaje, ${contactData.name}!\n\nHemos recibido tu consulta sobre "${contactData.subject}" y te responderemos dentro de 24 horas.`);
-            
-            this.reset();
-        });
-
-        // Smooth scrolling for navigation links
+         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
