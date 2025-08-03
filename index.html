@@ -472,7 +472,7 @@
             <h2 class="section-title">Agenda una cita</h2>
             <div class="appointment-form">
                 <div>
-                    <form id="appointmentForm">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
                         <div class="form-group">
                             <label for="name">Nombre y apellido</label>
                             <input type="text" id="name" name="name" required>
@@ -489,11 +489,16 @@
                             <label for="service">Servicio requerido</label>
                             <select id="service" name="service" required>
                                 <option value="">Elige un servicio</option>
-                                <option value="checkup">Checkeo regular</option>
-                                <option value="cleaning">Limpieza dental</option>
-                                <option value="filling">Rellenos dentales</option>
-                                <option value="whitening">Blanqueamientos dentales</option>
-                                <option value="emergency">Visitas de emergencia</option>
+                                <option value="Limpieza dental">Limpieza dental</option>
+                                <option value="Sellantes de Fosas y Fisuras">Sellantes de Fosas y Fisuras</option>
+                                <option value="Aplicación de Flúor Gel y Barniz">Aplicación de Flúor Gel y Barniz</option>
+                                <option value="Obturaciones de resina dental (rellenos blancos)">Obturaciones de resina dental (rellenos blancos)</option>
+                                <option value="Endodoncia">Endodoncia</option>
+                                <option value="Extracciones">Extracciones</option>
+                                <option value="Cirugía de cordales">Cirugía de cordales</option>
+                                <option value="Prótesis dentales">Prótesis dentales</option>
+                                <option value="Consulta general">Consulta general</option>
+
                             </select>
                         </div>
                         <div class="form-group">
@@ -567,23 +572,20 @@
             const email = formData.get('email');
             const phone = formData.get('phone');
             const service = formData.get('service');
-            const subject = formData.get('subject');
             const message = formData.get('notes');
             
             // Create mailto link with form data
-            const emailSubject = `Contact Form: ${subject}`;
             const emailBody = `Nombre: ${name}
 Email: ${email}
-Company: ${company}
-Phone: ${phone}
+Telefono: ${phone}
 
-Message:
+Mensaje:
 ${message}
 
 ---
 Sent from your portfolio website contact form`;
             
-            const mailtoLink = `mailto:contacto@dentsmile.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            const mailtoLink = `mailto:contacto@dentsmile.com?subject=${encodeURIComponent(service)}&body=${encodeURIComponent(emailBody)}`;
             
             // Open email client
             window.location.href = mailtoLink;
@@ -592,7 +594,7 @@ Sent from your portfolio website contact form`;
             const successDiv = document.createElement('div');
             successDiv.className = 'success-message';
             successDiv.style.display = 'block';
-            successDiv.innerHTML = '✅ Thank you! Your email client should open now. If not, please email me directly at rene@olivo.top';
+            successDiv.innerHTML = 'Gracias por contactarnos!Si tienes algun problema con el formulario puedes tambien contactarnos en contacto@dentsmilesv.com';
             
             form.appendChild(successDiv);
             
@@ -603,8 +605,6 @@ Sent from your portfolio website contact form`;
             }, 5000);
         }
 
-        // Initialize Lucide icons
-        lucide.createIcons();
 
          // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
