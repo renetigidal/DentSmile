@@ -223,6 +223,8 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             background: white;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .form-group input:focus,
@@ -287,6 +289,7 @@
             gap: 1.5rem;
             max-width: 600px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .submit-btn {
@@ -300,11 +303,55 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            min-width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+            flex-shrink: 0;
+        }
+
+        .whatsapp-text {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         /* Footer */
@@ -357,19 +404,90 @@
             
             .appointment-form {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .appointment-section {
+                padding: 2rem 1rem;
+                margin: 1rem 0;
+            }
+            
+            .contact-form {
+                padding: 0;
+                gap: 1rem;
+            }
+            
+            .form-group {
+                margin-bottom: 0;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.8rem;
+                font-size: 16px; /* Prevents zoom on iOS */
+                min-width: 0;
+            }
+            
+            .service-card {
+                padding: 1.5rem 1rem;
+                margin: 0 0.5rem;
             }
             
             .calendar-container {
                 height: 500px;
+                padding: 1rem;
             }
             
             section {
                 padding: 60px 1rem;
             }
+            
+            .whatsapp-float {
+                min-width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+                padding: 0 15px;
+                font-size: 12px;
+            }
+            
+            .whatsapp-float img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .appointment-section {
+                padding: 1.5rem 0.5rem;
+                border-radius: 20px;
+            }
+            
+            .contact-form {
+                max-width: 100%;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.7rem;
+            }
+            
+            .submit-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+50360730809" class="whatsapp-float" target="_blank" rel="noopener">
+        <img src="media/socials/whatsapp-svgrepo-com.svg" alt="WhatsApp">
+        <span class="whatsapp-text">Agenda tu cita</span>
+    </a>
+
     <header>
         <nav>
             <div class="logo">
@@ -451,7 +569,7 @@
                 </div>
                 <h3>Cirugía de cordales</h3>
                 <hr>
-                <p>Si tus terceras molares o “muelas del juicio”  están erupcionando, causan dolor y afectan la alineación de tus dientes, es momento de recurrir por su extracción, te ofrecemos tratamiento sin dolor y en manos de especialista en el área, en nuestro staff contamos con Cirujano Maxilofacial.</p>
+                <p>Si tus terceras molares o "muelas del juicio"  están erupcionando, causan dolor y afectan la alineación de tus dientes, es momento de recurrir por su extracción, te ofrecemos tratamiento sin dolor y en manos de especialista en el área, en nuestro staff contamos con Cirujano Maxilofacial.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -472,6 +590,7 @@
             <h2 class="section-title">Agenda una cita</h2>
             <div class="appointment-form">
                 <div>
+                    <div class="service-card">
                     <form class="contact-form" onsubmit="handleSubmit(event)">
                         <div class="form-group">
                             <label for="name">Nombre y apellido</label>
@@ -508,6 +627,7 @@
                         <br>
                         <button type="submit" class="submit-btn">Agenda Cita</button>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -552,8 +672,8 @@
             </div>
             <div class="footer-section">
                 <h3>Redes sociales</h3>
-                <p><a href="https://wa.me/+50360730809"><img src="media/vectors/whatsapp-svgrepo-com.svg" alt="Whatsapp" id="footer-icon"></a>    
-                <a href="https://www.instagram.com/dentsmile.sv/"><img src="media/vectors/instagram-1-svgrepo-com.svg" alt="Instagram" id="footer-icon"></a></p>
+                <p><a href="https://wa.me/+50360730809"><img src="media/socials/whatsapp-svgrepo-com.svg" alt="Whatsapp" id="footer-icon"></a>    
+                <a href="https://www.instagram.com/dentsmile.sv/"><img src="media/socials/instagram-1-svgrepo-com.svg" alt="Instagram" id="footer-icon"></a></p>
             </div>
         </div>
         <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem;">
@@ -583,7 +703,7 @@ Mensaje:
 ${message}
 
 ---
-Sent from your portfolio website contact form`;
+Enviado desde la tu pagina web`;
             
             const mailtoLink = `mailto:contacto@dentsmile.com?subject=${encodeURIComponent(service)}&body=${encodeURIComponent(emailBody)}`;
             
@@ -632,4 +752,3 @@ Sent from your portfolio website contact form`;
     </script>
 </body>
 </html>
-
