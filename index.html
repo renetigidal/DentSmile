@@ -336,6 +336,8 @@
             white-space: nowrap;
         }
 
+        
+
         .whatsapp-float:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
@@ -348,10 +350,48 @@
             flex-shrink: 0;
         }
 
+
+
+        
         .whatsapp-text {
             color: white;
             font-size: 14px;
             font-weight: bold;
+        }
+
+.waze-float {
+            position: fixed;
+            min-width: 60px;
+            height: 60px;
+            bottom: 20px;
+            left: 20px;
+            background: #00acf0;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(26, 45, 95, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+                .waze-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(37, 40, 211, 0.6);
+        }
+
+        .waze-float img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+            flex-shrink: 0;
         }
 
         /* Footer */
@@ -488,6 +528,11 @@
         <span class="whatsapp-text">Agenda tu cita</span>
     </a>
 
+    <!-- Waze Floating Button -->
+        <a href="https://www.waze.com/live-map/directions/sv/san-salvador/mejicanos/dentsmile?to=place.ChIJY8RNgyU7Y48RVltZBSs-0No " class="waze-float" target="_blank" rel="noopener">
+        <img src="media/waze-icon.svg" alt="Waze">
+        <span class="whatsapp-text">Visitanos</span>
+    </a>
     <header>
         <nav>
             <div class="logo">
@@ -649,6 +694,7 @@
             <p><strong>Dirección:</strong> 29 avenida norte reparto Duke casa 1 local 1-2<br>
             Referencia: primera planta de edificio coach gym zacamil<br>
             Mejicanos, El Salvador</p>
+            
             <p style="margin-top: 1rem;">
                 <strong>Horarios:</strong><br>
                 Lun-Vie: 8:00 AM - 4:00 PM<br>
