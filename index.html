@@ -1,528 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinica DentSmile</title>
     <link rel="icon" type="image/x-icon" href="media/dentsmile.png">
     <link rel="canonical" href="https://dentsmilesv.com/">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            background-color: black;
-        }
-
-        /* Header */
-        header {
-            background: black;
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0EBAE2 0%, #00FFFF  100%);
-            color: white;
-            padding: 150px 2rem 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="10" cy="10" r="10" fill="url(%23a)"><animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" values="0 0; 90 0; 0 0"/></circle><circle cx="50" cy="10" r="8" fill="url(%23a)"><animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" values="0 0; -40 0; 0 0"/></circle></svg>') repeat;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .cta-button {
-            background: lightseagreen;
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            animation: fadeInUp 1s ease 0.4s both;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #0EBAE2 0%, #00FFFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            border-color: #667eea;
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            background: linear-gradient(135deg, #0EBAE2, #00FFFF);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        #icon{
-    width: 50%;
-    margin: 10px 0            
-        }
-        /* Appointment Section */
-        .appointment-section {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8efff 100%);
-            border-radius: 30px;
-            padding: 3rem;
-            margin: 2rem 0;
-        }
-
-        .appointment-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid #e0e6ed;
-            border-radius: 15px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: white;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.1);
-        }
-
-        .calendar-container {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            height: 600px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .calendar-container h3 {
-            margin-bottom: 1rem;
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        .calendar-iframe {
-            width: 100%;
-            flex: 1;
-            border: none;
-            border-radius: 10px;
-            min-height: 0;
-        }
-
-        /* Map Section */
-        .map-container {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            height: 400px;
-            position: relative;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Contact Form */
-        .contact-section {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8efff 100%);
-            border-radius: 30px;
-            padding: 3rem;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-            max-width: 600px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea, #0EBAE2);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            min-width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 0 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        
-
-        .whatsapp-float:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-float img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-            flex-shrink: 0;
-        }
-
-
-
-        
-        .whatsapp-text {
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-.waze-float {
-            position: fixed;
-            min-width: 60px;
-            height: 60px;
-            bottom: 20px;
-            left: 20px;
-            background: #00acf0;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 0 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(26, 45, 95, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-                .waze-float:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(37, 40, 211, 0.6);
-        }
-
-        .waze-float img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-            flex-shrink: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #3498db;
-        }
-                #footer-icon{
-    width: 7%;
-    margin: 6px 0            
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .appointment-form {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .appointment-section {
-                padding: 2rem 1rem;
-                margin: 1rem 0;
-            }
-            
-            .contact-form {
-                padding: 0;
-                gap: 1rem;
-            }
-            
-            .form-group {
-                margin-bottom: 0;
-            }
-            
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.8rem;
-                font-size: 16px; /* Prevents zoom on iOS */
-                min-width: 0;
-            }
-            
-            .service-card {
-                padding: 1.5rem 1rem;
-                margin: 0 0.5rem;
-            }
-            
-            .calendar-container {
-                height: 500px;
-                padding: 1rem;
-            }
-            
-            section {
-                padding: 60px 1rem;
-            }
-            
-            .whatsapp-float {
-                min-width: 50px;
-                height: 50px;
-                bottom: 15px;
-                right: 15px;
-                padding: 0 15px;
-                font-size: 12px;
-            }
-            
-            .whatsapp-float img {
-                width: 20px;
-                height: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .appointment-section {
-                padding: 1.5rem 0.5rem;
-                border-radius: 20px;
-            }
-            
-            .contact-form {
-                max-width: 100%;
-            }
-            
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.7rem;
-            }
-            
-            .submit-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/+50360730809" class="whatsapp-float" target="_blank" rel="noopener">
@@ -531,7 +20,8 @@
     </a>
 
     <!-- Waze Floating Button -->
-        <a href="https://www.waze.com/live-map/directions/sv/san-salvador/mejicanos/dentsmile?to=place.ChIJY8RNgyU7Y48RVltZBSs-0No " class="waze-float" target="_blank" rel="noopener">
+    <a href="https://ul.waze.com/ul?place=ChIJY8RNgyU7Y48RVltZBSs-0No&from=ll.13.7354%2C-89.2022" class="waze-float"
+        target="_blank" rel="noopener">
         <img src="media/waze-icon.svg" alt="Waze">
         <span class="whatsapp-text">Visitanos</span>
     </a>
@@ -554,7 +44,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Tu Sonrisa perfecta te espera!</h1>
-            <p>Servicios dentales con un toque gentil, en DentSmile nos preocupamos por tu comodidad tanto como por tu salud dental.</p>
+            <p>Servicios dentales con un toque gentil, en DentSmile nos preocupamos por tu comodidad tanto como por tu
+                salud dental.</p>
             <a href="#appointment" class="cta-button">Agenda tu cita</a>
         </div>
     </section>
@@ -568,7 +59,10 @@
                 </div>
                 <h3>Limpieza dental</h3>
                 <hr>
-                <p>Se recomienda realizar cada 6 meses o mínimo una vez al año una limpieza profunda, realizamos tu limpieza con aparatos de ultrasonido el cual retira el sarro dental y manchas extrinsecas por medio de vibraciones, sin producir ningún tipo de dolor, finalizando con pulido dental y aplicación de flúor gel para mantener tu salud oral.</p>
+                <p>Se recomienda realizar cada 6 meses o mínimo una vez al año una limpieza profunda, realizamos tu
+                    limpieza con aparatos de ultrasonido el cual retira el sarro dental y manchas extrinsecas por medio
+                    de vibraciones, sin producir ningún tipo de dolor, finalizando con pulido dental y aplicación de
+                    flúor gel para mantener tu salud oral.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -576,7 +70,8 @@
                 </div>
                 <h3>Sellantes de Fosas y Fisuras</h3>
                 <hr>
-                <p>Es un tratamiento preventivo que consiste en sellar los surcos profundos de tus dientes para no permitir que se alojen bacterias y evitar que inicien el proceso de lesiones cariosas.</p>
+                <p>Es un tratamiento preventivo que consiste en sellar los surcos profundos de tus dientes para no
+                    permitir que se alojen bacterias y evitar que inicien el proceso de lesiones cariosas.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -584,31 +79,39 @@
                 </div>
                 <h3>Aplicación de Flúor Gel y Barniz</h3>
                 <hr>
-                <p>Es recomendable realizar cargas adecuadas de Flúor cada año y aplicarlo en sus diferentes presentaciones para remineralizar la estructura de tus dientes principalmente el esmalte para que no este susceptible a ningún daño.</p>
+                <p>Es recomendable realizar cargas adecuadas de Flúor cada año y aplicarlo en sus diferentes
+                    presentaciones para remineralizar la estructura de tus dientes principalmente el esmalte para que no
+                    este susceptible a ningún daño.</p>
             </div>
-                        <div class="service-card">
+            <div class="service-card">
                 <div class="service-icon">
                     <img src="media/vectors/tooth-repair-svgrepo-com.svg" alt="Limpieza dental" id="icon">
                 </div>
                 <h3>Obturaciones de resina dental (rellenos blancos)</h3>
                 <hr>
-                <p>Cuando la caries dental ya ha afectado tu esmalte o dentina, el tratamiento ideal es retirar todo el daño causado y obturar con materiales de calidad que recuperan tu estética y función masticatoria.</p>
-                        </div>
+                <p>Cuando la caries dental ya ha afectado tu esmalte o dentina, el tratamiento ideal es retirar todo el
+                    daño causado y obturar con materiales de calidad que recuperan tu estética y función masticatoria.
+                </p>
+            </div>
             <div class="service-card">
                 <div class="service-icon">
                     <img src="media/vectors/teeth-svgrepo-com (5).svg" alt="Limpieza dental" id="icon">
                 </div>
                 <h3>Endodoncia</h3>
                 <hr>
-                <p>Es un tratamiento que recomendamos cuando el daño causado por caries, desgaste o fractura en tu diente ha sido tan grande que ha comprometido la cavidad donde esta el nervio dental, nos ayuda a recuperar tu diente y mantenerlo sano unos años más.</p>
-                </div>
+                <p>Es un tratamiento que recomendamos cuando el daño causado por caries, desgaste o fractura en tu
+                    diente ha sido tan grande que ha comprometido la cavidad donde esta el nervio dental, nos ayuda a
+                    recuperar tu diente y mantenerlo sano unos años más.</p>
+            </div>
             <div class="service-card">
                 <div class="service-icon">
                     <img src="media/vectors/tooth-svgrepo-com (1).svg" alt="Limpieza dental" id="icon">
-            </div>
+                </div>
                 <h3>Extracciones simples y complejas</h3>
                 <hr>
-                <p>Cuando ya no podemos recuperar tu diente porque el daño que han causado las bacterias con la caries es demasiado grande o has sufrido alguna fractura y es imposible rehabilitarlo recurrimos a la extracción dental procurando que el paciente no sienta ningún dolor en el procedimiento.</p>
+                <p>Cuando ya no podemos recuperar tu diente porque el daño que han causado las bacterias con la caries
+                    es demasiado grande o has sufrido alguna fractura y es imposible rehabilitarlo recurrimos a la
+                    extracción dental procurando que el paciente no sienta ningún dolor en el procedimiento.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -616,7 +119,10 @@
                 </div>
                 <h3>Cirugía de cordales</h3>
                 <hr>
-                <p>Si tus terceras molares o "muelas del juicio"  están erupcionando, causan dolor y afectan la alineación de tus dientes, es momento de recurrir por su extracción, te ofrecemos tratamiento sin dolor y en manos de especialista en el área, en nuestro staff contamos con Cirujano Maxilofacial.</p>
+                <p>Si tus terceras molares o "muelas del juicio" están erupcionando, causan dolor y afectan la
+                    alineación de tus dientes, es momento de recurrir por su extracción, te ofrecemos tratamiento sin
+                    dolor y en manos de especialista en el área, en nuestro staff contamos con Cirujano Maxilofacial.
+                </p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -624,12 +130,14 @@
                 </div>
                 <h3>Prótesis dentales</h3>
                 <hr>
-                <p>Confeccionamos todo tipo de protesis: Fijas, Removibles siendo estas tanto funcionales como estéticas, Evaluamos cada caso y te ofrecemos las mejores alternativas y materiales de calidad que se ajusten a tu presupuesto como metal Porcelana, Disilicato de Litio, Zirconio, etc.</p>
+                <p>Confeccionamos todo tipo de protesis: Fijas, Removibles siendo estas tanto funcionales como
+                    estéticas, Evaluamos cada caso y te ofrecemos las mejores alternativas y materiales de calidad que
+                    se ajusten a tu presupuesto como metal Porcelana, Disilicato de Litio, Zirconio, etc.</p>
             </div>
         </div>
-            
+
         </div>
-        
+
     </section>
 
     <section id="appointment">
@@ -638,42 +146,45 @@
             <div class="appointment-form">
                 <div>
                     <div class="service-card">
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Nombre y apellido</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Numero de telefono</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Servicio requerido</label>
-                            <select id="service" name="service" required>
-                                <option value="">Elige un servicio</option>
-                                <option value="Limpieza dental">Limpieza dental</option>
-                                <option value="Sellantes de Fosas y Fisuras">Sellantes de Fosas y Fisuras</option>
-                                <option value="Aplicación de Flúor Gel y Barniz">Aplicación de Flúor Gel y Barniz</option>
-                                <option value="Obturaciones de resina dental (rellenos blancos)">Obturaciones de resina dental (rellenos blancos)</option>
-                                <option value="Endodoncia">Endodoncia</option>
-                                <option value="Extracciones">Extracciones</option>
-                                <option value="Cirugía de cordales">Cirugía de cordales</option>
-                                <option value="Prótesis dentales">Prótesis dentales</option>
-                                <option value="Consulta general">Consulta general</option>
+                        <form class="contact-form" onsubmit="handleSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Nombre y apellido</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Numero de telefono</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Servicio requerido</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Elige un servicio</option>
+                                    <option value="Limpieza dental">Limpieza dental</option>
+                                    <option value="Sellantes de Fosas y Fisuras">Sellantes de Fosas y Fisuras</option>
+                                    <option value="Aplicación de Flúor Gel y Barniz">Aplicación de Flúor Gel y Barniz
+                                    </option>
+                                    <option value="Obturaciones de resina dental (rellenos blancos)">Obturaciones de
+                                        resina dental (rellenos blancos)</option>
+                                    <option value="Endodoncia">Endodoncia</option>
+                                    <option value="Extracciones">Extracciones</option>
+                                    <option value="Cirugía de cordales">Cirugía de cordales</option>
+                                    <option value="Prótesis dentales">Prótesis dentales</option>
+                                    <option value="Consulta general">Consulta general</option>
 
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="notes">Comentarios adicionales</label>
-                            <textarea id="notes" name="notes" rows="3" placeholder="Comentarios adicionales (Opcional)..."></textarea>
-                        </div>
-                        <br>
-                        <button type="submit" class="submit-btn">Agenda Cita</button>
-                    </form>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Comentarios adicionales</label>
+                                <textarea id="notes" name="notes" rows="3"
+                                    placeholder="Comentarios adicionales (Opcional)..."></textarea>
+                            </div>
+                            <br>
+                            <button type="submit" class="submit-btn">Agenda Cita</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -683,20 +194,16 @@
     <section id="location">
         <h2 class="section-title">Visitanos</h2>
         <div class="map-container">
-            <iframe 
+            <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d560.6503800232242!2d-89.20269001321199!3d13.73260957328036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633b25834dc463%3A0xdad03e2b05595b56!2sDentsmile!5e0!3m2!1sen!2ssv!4v1750810394703!5m2!1sen!2ssv"
-                width="100%" 
-                height="400" 
-                style="border:0;" 
-                allowfullscreen="yes" 
-                loading="lazy">
+                width="100%" height="400" style="border:0;" allowfullscreen="yes" loading="lazy">
             </iframe>
         </div>
         <div style="text-align: center; margin-top: 2rem;">
-            <p><strong>Dirección:</strong> 29 avenida norte reparto Duke casa 1 local 1-2<br>
-            Referencia: primera planta de edificio coach gym zacamil<br>
-            Mejicanos, El Salvador</p>
-            
+            <p><strong>Dirección:</strong>Calle Zacamil y Avenida Magisterial Local 36-5
+                Referencia (Frente a C.Escolar Perú y a la par de veterinaria)<br>
+                Mejicanos, El Salvador</p>
+
             <p style="margin-top: 1rem;">
                 <strong>Horarios:</strong><br>
                 Lun-Vie: 8:00 AM - 5:00 PM<br>
@@ -710,18 +217,23 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Clinica DentSmile</h3>
-                <p>Somos tus socios de confianza para un cuidado dental completo. Estamos comprometidos a ayudarte a alcanzar y mantener tu salud oral.</p>
+                <p>Somos tus socios de confianza para un cuidado dental completo. Estamos comprometidos a ayudarte a
+                    alcanzar y mantener tu salud oral.</p>
             </div>
 
             <div class="footer-section">
                 <h3>Visitanos</h3>
-                <p>📍 29 avenida norte reparto Duke casa 1 local 1-2 Referencia: primera planta de edificio coach gym zacamil</p>
-                
+                <p>📍 29 avenida norte reparto Duke casa 1 local 1-2 Referencia: primera planta de edificio coach gym
+                    zacamil</p>
+
             </div>
             <div class="footer-section">
                 <h3>Redes sociales</h3>
-                <p><a href="https://wa.me/+50360730809"><img src="media/vectors/whatsapp-svgrepo-com.svg" alt="Whatsapp" id="footer-icon"></a>    
-                <a href="https://www.instagram.com/dentsmile.sv/"><img src="media/vectors/instagram-1-svgrepo-com.svg" alt="Instagram" id="footer-icon"></a></p>
+                <p><a href="https://wa.me/+50360730809"><img src="media/vectors/whatsapp-svgrepo-com.svg" alt="Whatsapp"
+                            id="footer-icon"></a>
+                    <a href="https://www.instagram.com/dentsmile.sv/"><img
+                            src="media/vectors/instagram-1-svgrepo-com.svg" alt="Instagram" id="footer-icon"></a>
+                </p>
             </div>
         </div>
         <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem;">
@@ -729,77 +241,7 @@
         </div>
     </footer>
 
-    <script>
-         // Contact form handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const service = formData.get('service');
-            const message = formData.get('notes');
-            
-            // Create mailto link with form data
-            const emailBody = `Nombre: ${name}
-Email: ${email}
-Telefono: ${phone}
-
-Mensaje:
-${message}
-
----
-Enviado desde la tu pagina web`;
-            
-            const mailtoLink = `mailto:contacto@dentsmilesv.com?subject=${encodeURIComponent(service)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            const successDiv = document.createElement('div');
-            successDiv.className = 'success-message';
-            successDiv.style.display = 'block';
-            successDiv.innerHTML = 'Gracias por contactarnos!Si tienes algun problema con el formulario puedes tambien contactarnos en contacto@dentsmilesv.com';
-            
-            form.appendChild(successDiv);
-            
-            // Reset form after a delay
-            setTimeout(() => {
-                form.reset();
-                successDiv.remove();
-            }, 5000);
-        }
-
-
-         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
-            } else {
-                header.style.background = 'black';
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
+
 </html>
-
-
-
