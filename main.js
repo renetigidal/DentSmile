@@ -19,7 +19,7 @@ Mensaje:
 ${message}
 
 ---
-Enviado desde la tu pagina web`;
+Enviado desde la página web de Clínica DentSmile`;
 
     const mailtoLink = `mailto:contacto@dentsmilesv.com?subject=${encodeURIComponent(service)}&body=${encodeURIComponent(emailBody)}`;
 
